@@ -1,0 +1,37 @@
+nowy project
+composer create-project symfony/website-skeleton
+
+nowy controller
+php bin/console
+
+
+połączenie z bazą - test
+php bin/console doctrine:query:sql "SHOW DATABASES"
+
+symfony dev toolbar
+composer require symfony/apache-pack
+ make:controller
+
+
+encja odwzorowanie bazy danych
+
+ tworzy encje uesr 
+ i repository user 
+ php bin/console make:user
+
+pozwala dodać wpis do encji
+ php bin/console make:entity
+
+ tworzy migracje do bazy
+ php bin/console make:migration
+
+ tworzy wpis do bazy - podpowiedz po zrobieniu migracji
+  php bin/console doctrine:migrations:migrate
+
+synchronizacja bazy 
+php bin/console doctrine:migration:sync-metadata-storage
+
+
+błąd locale storage
+ DATABASE_URL="mysql://root:@127.0.0.1:3306/image_host?serverVersion=mariadb-10.4.21&charset=utf8mb4"
+ zmiana bazy na mariadb i poprawna wersja zrobiona nowa migracja i działa
